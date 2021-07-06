@@ -11,6 +11,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
+
+const db = require('./models');
+
+db.Workout.aggregate([{
+      $addFields: { totalDuration: { $sum: "$exercises.duration" } },
+}])
+
+
 connectToDb().then(() => {
   app.listen(PORT, () => {
     console.log(`Server Listening on port ${PORT}`);

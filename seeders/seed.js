@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const db = require('../models');
-require("dotenv").config();
+require('dotenv').config();
+
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useFindAndModify: false,
