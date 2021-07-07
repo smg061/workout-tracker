@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const exerciseSchema = require("./exercise");
 const workoutSchema = new mongoose.Schema(
   {
-    date: {
+    day: {
       type: Date,
     },
 
@@ -25,6 +25,8 @@ const workoutSchema = new mongoose.Schema(
 //     return this.totalDuration;
 
 // };
+
+
 const Workout = mongoose.model("Workout", workoutSchema);
 
 const aggregate = Workout.aggregate();

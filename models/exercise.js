@@ -20,13 +20,14 @@ const exerciseSchema = mongoose.Schema(
         },
         sets: {
             type: Number
+        },
+        distance:{
+            type: Number
         }
 
     }
 )
 
-
-//const Exercise = mongoose.model("Exercise", exerciseSchema);
 
 
 module.exports = exerciseSchema;
