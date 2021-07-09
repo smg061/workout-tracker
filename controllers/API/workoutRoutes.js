@@ -15,9 +15,7 @@ router.get("/", async (req, res) => {
         },
       },
     ]);
-    console.log("Function called!");
     res.status(200).json(workoutData);
-    return;
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
@@ -36,7 +34,6 @@ router.get("/range", async (req, res) => {
     ])
       .sort({ day: -1 }) // sort by latest workout
       .limit(7); // limit to the last 7 ones
-    // console.log(workoutData);
     res.status(200).json(workoutData);
   } catch (err) {
     res.status(500).json(err);
